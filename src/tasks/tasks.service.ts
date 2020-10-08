@@ -8,6 +8,10 @@ import { CreateTaskDto } from './dto/create-task.dto';
 export class TasksService {
   private tasks: Task[] = [];
 
+  public getAllTasks(): Task[] {
+    return this.tasks;
+  }
+
   public createTask(createTaskDto: CreateTaskDto): Task {
     const { title, description } = createTaskDto;
     const task: Task = {

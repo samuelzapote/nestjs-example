@@ -8,6 +8,11 @@ import { CreateTaskDto } from './dto/create-task.dto';
 export class TasksController {
   constructor(private tasksService: TasksService) { }
 
+  @Get()
+  getAllTasks(): Task[] {
+    return this.tasksService.getAllTasks();
+  }
+
   @Post()
   createTask(@Body() createTaskDto: CreateTaskDto): Task {
     return this.tasksService.createTask(createTaskDto);
